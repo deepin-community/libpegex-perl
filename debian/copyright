@@ -1,0 +1,37 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://metacpan.org/release/Pegex
+Upstream-Contact: Ingy döt Net <ingy@cpan.org>
+Upstream-Name: Pegex
+
+Files: *
+Copyright: 2010-2020, Ingy döt Net <ingy@cpan.org>
+License: Artistic or GPL-1+
+
+Files: xt/grammars/vic.pgx
+Copyright: 2014, Vikas N Kumar <vikas@cpan.org>
+License: Artistic or GPL-1+
+Comment: The file itself doesn't contain license information but the author
+ kindly pointed to the original source in
+ https://github.com/ingydotnet/pegex-pm/issues/23#issuecomment-56320680
+ --> https://github.com/vikasnkumar/vic/blob/master/LICENSE
+
+Files: debian/*
+Copyright: 2014-2020, gregor herrmann <gregoa@debian.org>
+ 2016-2018, Angel Abad <angel@debian.org>
+License: Artistic or GPL-1+
+
+License: Artistic
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the Artistic License, which comes with Perl.
+ .
+ On Debian systems, the complete text of the Artistic License can be
+ found in `/usr/share/common-licenses/Artistic'.
+
+License: GPL-1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 1, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of version 1 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-1'.

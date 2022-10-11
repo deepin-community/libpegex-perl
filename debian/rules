@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+PACKAGE = $(shell dh_listpackages)
+TMP     = $(CURDIR)/debian/$(PACKAGE)
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+
+	# rm manpages which are not related to modules
+	# the PODs are still installed but the created manpages
+	# are syntactically invalid
+	for M in \
+		Pegex::API.3pm \
+		Pegex::Miscellany.3pm \
+		Pegex::Overview.3pm \
+		Pegex::Resources.3pm \
+		Pegex::Syntax.3pm \
+		Pegex::Tutorial.3pm \
+		Pegex::Tutorial::Calculator.3pm \
+		Pegex::Tutorial::JSON.3pm \
+	; do $(RM) -v $(TMP)/usr/share/man/man3/$$M ; done
+
+override_dh_installexamples:
+	dh_installexamples
+	sed -i '1s|^#!/usr/bin/env perl|#!/usr/bin/perl|' $(TMP)/usr/share/doc/$(PACKAGE)/examples/self-parser.pl
